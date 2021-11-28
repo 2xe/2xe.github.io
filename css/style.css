@@ -105,4 +105,5 @@ input[type=reset]:hover {
 	font-family: var(--fontinput);
 	color: var(--redglow);
 	margin-top: 20px;
+	text-align: center;
 }
