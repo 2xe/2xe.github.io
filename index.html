@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/sci_conversions.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<div class="flex-container">
+	<div id="conversion-headline">Convert values</div>
+</div>
+
+<div class="form-container">
+	<div class="sci-description">
+		// Watts = Amps x Volts <br>
+		// Amps = Watts / Volts <br>
+		// Volts = Watts / Amps <br>
+		<br>
+		<br>
+		<div id="conversion"></div>
+	</div>
+	<form class="std-form" method="">
+		<div class="input-container">
+			<input type="number" name="volts" id="input-volts" placeholder="empty">
+			<div>Volts</div>
+		</div>
+		<div class="input-container">
+			<input type="number" name="amps"  id="input-amps" placeholder="empty">
+			<div>Amps</div>
+		</div>
+		<div class="input-container">
+			<input type="number" name="watts" id="input-watts" placeholder="empty">
+			<div>Watts</div>
+		</div>
+		<div class="input-container">
+			<input type="submit" id="convert" name="convert" value="convert">
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+
+	function convertValues(event) {
+
+		event.preventDefault();
+
+		let volts = document.getElementById("input-volts").value;
+		let amps = document.getElementById("input-amps").value;
+		let watts = document.getElementById("input-watts").value;
+
+		const xmlhttp = new XMLHttpRequest();
+
+		let urlData = getUrlVars();
+		
+		xmlhttp.onload = function() {
+
+			const myObj = JSON.parse(this.responseText);
+			let resultHtml = "";
+			
+			resultHtml += "Volts: " + myObj.result["volts"]+"<br>";
+			
+			//Amps = Watts / Volts
+			resultHtml += "Amps: " + myObj.result["amps"]+"<br>";
+			
+			resultHtml += "Watts: " + myObj.result["watts"]+"<br>";
+			
+			document.getElementById("conversion").innerHTML = resultHtml;
+		}
+
+		xmlhttp.open("GET", "https://ysx.dk/api/data/php/sciconversions.php?name=convertTo&volts="+urlData.volts+"&amps="+urlData.amps+"&watts="+urlData.watts);
+		xmlhttp.send();
+	}
+
+	function getUrlVars() {
+	    var vars = {};
+	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	        vars[key] = value;
+	    });
+	    return vars;
+	}
+
+	document.addEventListener("DOMContentLoaded", function(event) { 
+
+		console.log("DOMContentLoaded");
+
+		let urlData = getUrlVars();
+		document.getElementById("input-volts").value = urlData.volts ? urlData.volts : 0;
+		document.getElementById("input-amps").value = urlData.amps ? urlData.amps : 0;
+		document.getElementById("input-watts").value = urlData.watts ? urlData.watts : 0;
+	  	
+	  	document.getElementById("convert").addEventListener("click", convertValues(event));
+	});
+
+
+</script>
+</body>
+</html>
