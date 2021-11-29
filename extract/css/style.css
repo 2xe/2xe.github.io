@@ -5,10 +5,18 @@
 	--c-cleanwhite:  	#f7f8ff;
 	--c-lightblue: 		#5a686c;
 
-	--c-darkblue: 		#010f14;
-	--c-dark:  			#010f14;
-
 	--c-coffee: 		#C0FFEE;
+
+
+	/* MOCHA */
+	--c-mocha-white: 		#FFFFFF;
+	--c-mocha-black: 		#000000;
+	--c-mocha-grey: 		#BFBFBF;
+	--c-mocha-darkgrey: 	#595552;
+	--c-mocha-sand: 		#D5CEB6;
+	--c-mocha-brown: 		#45320C;
+	--c-mocha-green:  		#83ad4e;
+	--c-mocha-darkgreen:  	#556146;
 
 /* FONT SIZES */
 	--f-xxlarge: 		36px;
@@ -30,18 +38,50 @@ body {
 
 	font-family: var(--f-family-standard);
 
-	color: var(--c-cleanwhite);
-	background-color: var(--c-dark);
+	color: var(--c-mocha-brown);
+	background-color: var(--c-mocha-white);
 	font-size: var(--f-text);
 }
 
-#extraction {
+a {
+	color: var(--c-mocha-green);
+	cursor: pointer;
+	text-decoration: underline;
+}
+a:hover {
+	color: var(--c-mocha-grey);
+	cursor: pointer;
+	text-decoration: underline;
+}
+#top {
+	height: 100px;
+	background-color: var(--c-mocha-white);
+	border-top: 8px solid var(--c-mocha-brown);
+	border-bottom: 16px solid var(--c-mocha-brown);
+}
+.extraction {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	flex-wrap: wrap;
 	margin: auto;
-	width: 500px;
+	width: 780px;
 	padding-top: 80px;
+}
+
+.brew-data {
+	margin: 20px;
+	width: 350px;
+}
+
+.brew-data .barista{
+	font-size: var(--f-small);
+	font-style: italic;
+	color: var(--c-mocha-sand);
+}
+.brew-data .description{
+	padding-top: 20px;
+	font-size: var(--f-text);
+	color: var(--c-mocha-brown);
 }
 
 #brew-ratio,
@@ -52,30 +92,24 @@ body {
 	width: 400px;
 }
 
-#brew-ratio {
-
-}
-
-#brew-time {
-
-}
-
-#brew-temperature {
-
-}
-
 .headline {
 	font-family:var(--f-family-standard);
 	font-size: var(--f-xlarge);
 	font-weight: bold;
-	color: var(--c-cleanwhite);
+	color: var(--c-mocha-darkgreen);
 }
 
-.coffee-bean {
+.coffee-bean,
+.coffee-brew,
+.coffee-machine,
+.coffee-grinder {
 	display: flex;
 	flex-direction: row;
 	height: 25px;
 }
-.coffee-bean .data {
-	width: 50px;
+.coffee-bean .data,
+.coffee-brew .data,
+.coffee-machine .data,
+.coffee-grinder .data {
+	width: 80px;
 }
