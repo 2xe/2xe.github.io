@@ -1,0 +1,33 @@
+:root {
+
+/* COLORS  */
+	--white: 		#ffffff;
+	--cleanwhite:  	#e7eaf3;
+	--darkblue: 	#10318f;
+
+	--dark:  		#302f2f;
+
+/* FONT SIZES */
+	--fontxxlarge: 36px;
+	--fontxlarge: 32px;
+	--fontlarge: 24px;
+	--fontheadline: 16px;
+	--fontmedium: 14px;
+	--fonttext: 12px;
+	--fontsmall: 11px;
+
+/* FONT FAMILY  */
+	--fontstandard:  "Tahoma", sans-serif;
+	--fontinput: "Courier New", "monospace", sans-serif;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	font-family: var(--fontstandard);
+
+	color: var(--egg);
+	background-color: var(--cleanwhite);
+	font-size: var(--fonttext);
+}
