@@ -112,3 +112,11 @@ a:hover {
 .coffee-grinder .data {
 	width: 80px;
 }
+
+#ctof {
+	margin-left: 20px;
+}
+#ctof, 
+#ctok {
+	font-size: var(--f-small);
+}

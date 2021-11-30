@@ -2,6 +2,7 @@
 <html>
 <head>
 	<script type="text/javascript" src="js/temperature.js"></script>
+	<script type="text/javascript" src="js/ratio.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=2">
 
@@ -31,19 +32,19 @@
 	
 	<div class="brew-data">
 		<div class="coffee-brew weight">
-				<div class="data">Weight: </div> 16g
+				<div class="data">Weight: </div> <span id="espresso-start-weight">16</span>g
 		</div>
 		<div class="coffee-brew ratio">
-				<div class="data">Ratio:</div>  1:2
+				<div class="data">Ratio:</div>  <span id="espresso-ratio">1:2</span>
 		</div>
 		<div class="coffee-brew cup">
-				<div class="data">Cup:</div>  36g
+				<div class="data">Cup:</div>  <span id="espresso-end-weight">32</span>g
 		</div>
 		<div class="coffee-brew time">
 				<div class="data">Time:</div>  26s
 		</div>
 		<div class="coffee-brew temperature">
-				<div class="data">Temperature:</div>  93°C
+				<div class="data">Temperature:</div>  93°C <i><span id="ctof"></span>°F / &nbsp;<span id="ctok"></span>K</i>
 		</div>
 	</div>
 
@@ -140,7 +141,32 @@
 
 
 <script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) { 
 
+		console.log("DOMContentLoaded");
+
+		// Fill in the blanks if enough data is provided
+		let espressoStartWeight = document.getElementById("espresso-start-weight");
+		let espressoRatio = document.getElementById("espresso-start-weight");
+		let espressoEndWeight = document.getElementById("espresso-start-weight");
+		
+		
+		if (espressoStartWeight && espressoEndWeight) {		// calculate Espresso Ratio 
+			espressoRatio = calculateEspressoRatio(espressoStartWeight, espressoEndWeight);
+		}
+		else if (espressoRatio && espressoStartWeight) {	// calculate Espresso End Weight
+			espressoEndWeight = calculateEspressoEndWeight(espressoRatio, espressoStartWeight);
+		}
+		else if (espressoRatio && espressoEndWeight) {		// calculate Espresso Start Weight
+			espressoStartWeight = calculateEspressoStartWeight(espressoRatio, espressoEndWeight);
+		}
+
+		let fahrenheit = celsiusToFahrenheit(93);
+		let kelvin = celsiusToKelvin(93);
+
+		document.getElementById("ctof").innerHTML = fahrenheit;
+		document.getElementById("ctok").innerHTML =kelvin;
+	});
 </script>
 </body>
 </html>
