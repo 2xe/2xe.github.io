@@ -64,7 +64,9 @@ server.listen(3000);
 server.on('connection', function(socket){
 	console.log('New connection...');
 });
+
 console.log('Listening on port 3000...')
+console.log('Updated...')
 
 // custom modules
 // use const to avoid redeclaration of the logger
