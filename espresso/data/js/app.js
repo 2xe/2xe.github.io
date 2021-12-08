@@ -40,6 +40,10 @@ const EventEmitter = require('events');
 // HTTP
 const http = require('http');
 
+// express
+const express = require('express');
+const app = express();
+
 const server = http.createServer(function(req, res){
  if (req.url === '/') {
  	res.write('Hello World');
@@ -51,21 +55,25 @@ const server = http.createServer(function(req, res){
  	res.end();
  }
  // GET
- get('/', function(req, res){
-
- });
  // POST 
  // PUT
  // DELETE
 
 });
 
-server.listen(3000);
+app.get('/api/courses/:id', function(req, res) {
+    res.send(req.params.id);
+});
+
+//PORT
+const port = process.env.PORT || 3000;
+
+server.listen(port);
 server.on('connection', function(socket){
 	console.log('New connection...');
 });
 
-console.log('Listening on port 3000...')
+console.log('Listening on port ${port}...')
 console.log('Updated...')
 
 // custom modules
