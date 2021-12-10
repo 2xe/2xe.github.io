@@ -5,18 +5,21 @@
 	--c-cleanwhite:  	#f7f8ff;
 	--c-lightblue: 		#5a686c;
 
-	--c-coffee: 		#C0FFEE;
+	--c-coffee: 		#C0FFEE; /* #C0FFEE*/
 
 
 	/* MOCHA */
 	--c-mocha-white: 		#FFFFFF;
 	--c-mocha-black: 		#000000;
+	--c-mocha-light-grey: 	#E6E7ED;
 	--c-mocha-grey: 		#BFBFBF;
+	--c-mocha-grey2: 		#E6E7ED;
 	--c-mocha-darkgrey: 	#595552;
 	--c-mocha-sand: 		#D5CEB6;
 	--c-mocha-brown: 		#45320C;
 	--c-mocha-green:  		#83ad4e;
 	--c-mocha-darkgreen:  	#556146;
+	--c-mocha-darkestgreen: #1A221A;
 
 /* FONT SIZES */
 	--f-xxlarge: 		36px;
@@ -30,16 +33,17 @@
 /* FONT FAMILY  */
 	--f-family-standard:  	"Tahoma", sans-serif;
 	--f-family-input: 		"Courier New", "monospace", sans-serif;
+	--f-family-vesper:  		"Vesper Libre", serif;
 }
-
-body {
-	margin: 0px;
-	padding: 0px;
-
-	font-family: var(--f-family-standard);
-
-	color: var(--c-mocha-brown);
+html {
 	background-color: var(--c-mocha-white);
+}
+body {
+	margin: 20px;
+	border-radius: 16px;
+	font-family: var(--f-family-standard);
+	color: var(--c-mocha-brown);
+	background-color: var(--c-mocha-grey2);
 	font-size: var(--f-text);
 }
 
@@ -54,9 +58,59 @@ a:hover {
 	text-decoration: underline;
 }
 #top {
-	height: 20px;
-	background-color: var(--c-mocha-white);
-	border-top: 8px solid var(--c-mocha-brown);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: auto;
+	border-radius: 16px;
+	margin: 20px;
+	margin-top: 20px;
+}
+#brand {
+	display: flex;
+	flex-direction: row;
+}
+#brand .brand-name {
+	margin-top: 20px;
+	margin-left: 15px;
+	font-family: var(--f-family-vesper);
+	font-size: var(--f-large);
+}
+#menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+#menu .item {
+	width: 150px;
+	line-height: 36px;
+	margin-top: 20px;
+	padding-right: 10px;
+	text-align: right;
+	font-size: var(--f-headline);
+}
+#menu .item.active a {
+	color: var(--c-mocha-black);
+}
+#menu .item a {
+	color: #a0a3af;
+	font-family: var(--f-family-vesper);
+	font-weight: bold;
+	text-decoration: none;
+	transition: color 0.25s;
+}
+#menu .item a:hover {
+	cursor: pointer;
+	color: var(--c-mocha-black);
+	text-decoration: underline;
+	transition: color 1s;
+}
+.brand-logo {
+	height: 64px;
+	width: 64px;
+	background-image: url(../images/coffeeclub3-512.png);
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 .extraction {
 	display: flex;
@@ -64,7 +118,7 @@ a:hover {
 	flex-wrap: wrap;
 	margin: auto;
 	max-width: 780px;
-	padding-top: 80px;
+	padding-top: 40px;
 }
 
 .brew-data {
@@ -92,24 +146,24 @@ a:hover {
 }
 
 .headline {
-	font-family:var(--f-family-standard);
+	font-family:var(--f-family-vesper);
 	font-size: var(--f-xlarge);
 	font-weight: bold;
 	color: var(--c-mocha-darkgreen);
 }
 
-.coffee-bean,
-.coffee-brew,
-.coffee-machine,
-.coffee-grinder {
+.extraction .coffee-bean,
+.extraction .coffee-brew,
+.extraction .coffee-machine,
+.extraction .coffee-grinder {
 	display: flex;
 	flex-direction: row;
 	height: 25px;
 }
-.coffee-bean .data,
-.coffee-brew .data,
-.coffee-machine .data,
-.coffee-grinder .data {
+.extraction .coffee-bean .data,
+.extraction .coffee-brew .data,
+.extraction .coffee-machine .data,
+.extraction .coffee-grinder .data {
 	width: 80px;
 }
 
@@ -119,4 +173,9 @@ a:hover {
 #ctof, 
 #ctok {
 	font-size: var(--f-small);
+}
+#footer {
+	height: 250px;
+	border-radius: 0 0 16px 16px;
+	background-color: var(--c-mocha-darkestgreen);
 }

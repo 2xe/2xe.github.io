@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<script type="text/javascript" src="js/temperature.js"></script>
 	<script type="text/javascript" src="js/ratio.js"></script>
-	
+	<script type="text/javascript" src="js/include-html.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@500&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=2">
 
 	<meta charset="utf-8">
@@ -12,9 +18,20 @@
 </head>
 <body>
 
+<!-- branding and menu -->
 <div id="top">
-	
+	<div id="brand">
+		<div class="brand-logo"></div>
+		<div class="brand-name">Coffee Club</div>
+	</div>
+	<div id="menu">
+		<div class="item active"><a href="">Recipes</a></div>
+		<div class="item"><a href="">Beans</a></div>
+		<div class="item"><a href="./setup/index.html">Inventory</a></div>
+	</div>
 </div>
+
+
 
 <div class="extraction">
 
@@ -137,6 +154,7 @@
 	-->
 
 </div>
+<div id="footer"></div>
 
 
 
@@ -166,6 +184,8 @@
 
 		document.getElementById("ctof").innerHTML = fahrenheit;
 		document.getElementById("ctok").innerHTML =kelvin;
+
+		includeHTML();
 	});
 </script>
 </body>
