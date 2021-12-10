@@ -33,7 +33,7 @@
 /* FONT FAMILY  */
 	--f-family-standard:  	"Tahoma", sans-serif;
 	--f-family-input: 		"Courier New", "monospace", sans-serif;
-	--f-family-vesper:  		"Vesper Libre", serif;
+	--f-family-vesper:  	"Vesper Libre", serif;
 }
 html {
 	background-color: var(--c-mocha-white);
@@ -62,19 +62,28 @@ a:hover {
 	flex-direction: row;
 	justify-content: space-between;
 	width: auto;
-	border-radius: 16px;
+	border-bottom:  1px solid #d0d4d9;
 	margin: 20px;
 	margin-top: 20px;
 }
-#brand {
+.brand {
 	display: flex;
 	flex-direction: row;
 }
-#brand .brand-name {
+.brand .brand-name {
 	margin-top: 20px;
 	margin-left: 15px;
 	font-family: var(--f-family-vesper);
 	font-size: var(--f-large);
+	color: var(--c-mocha-darkestgreen);
+}
+.brand .brand-logo {
+	height: 42px;
+	width: 64px;
+    margin-top: 12px;
+	background-image: url(../images/cc.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 #menu {
 	display: flex;
@@ -105,13 +114,6 @@ a:hover {
 	text-decoration: underline;
 	transition: color 1s;
 }
-.brand-logo {
-	height: 64px;
-	width: 64px;
-	background-image: url(../images/coffeeclub3-512.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
 .extraction {
 	display: flex;
 	flex-direction: row;
@@ -119,6 +121,7 @@ a:hover {
 	margin: auto;
 	max-width: 780px;
 	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .brew-data {
@@ -175,7 +178,17 @@ a:hover {
 	font-size: var(--f-small);
 }
 #footer {
-	height: 250px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	height: 200px;
 	border-radius: 0 0 16px 16px;
+	padding:  20px 20px 40px 20px;
 	background-color: var(--c-mocha-darkestgreen);
+}
+#footer .brand .brand-logo {
+	height: 256px;
+	width: 256px;
+	background-image: url(../images/cc.svg);
+	filter: invert(13%) sepia(9%) saturate(868%) hue-rotate(71deg) brightness(96%) contrast(87%);
 }
