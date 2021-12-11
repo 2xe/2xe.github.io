@@ -9,7 +9,9 @@ const http = require('http');
 // express
 const express = require('express');
 const app = express();
-
+app.use(express.json());
+app.use(express.static('public'));
+app.use(require('./js/routes.js')); // api structure
 /*
 const server = http.createServer(function(req, res){
 
@@ -33,8 +35,8 @@ const server = http.createServer(function(req, res){
 var data = require('./data/data.js');
 
 // Routes
-app.use(express.static('public'));
-app.use(require('./js/routes.js')); // api structure
+
+
 
 //PORT
 const port = process.env.PORT || 3000;

@@ -91,7 +91,7 @@ a:hover {
 	justify-content: flex-end;
 }
 #menu .item {
-	width: 150px;
+	margin-left: 40px;
 	line-height: 36px;
 	margin-top: 20px;
 	padding-right: 10px;
@@ -126,7 +126,7 @@ a:hover {
 
 .brew-data {
 	margin: 20px;
-	width: 350px;
+	width: 325px;
 }
 
 .brew-data .barista{
