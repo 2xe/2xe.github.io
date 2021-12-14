@@ -5,12 +5,10 @@ class Logs extends EventEmitter {
 
 	logServerRequest(request) {
 
-		let content = request.toString();	
-
-		let data = JSON.stringify(content);
+		let data = JSON.stringify(request);
 	
 		// save to file
-		fs.writeFile('./logs/requests.json', data, function error() {
+		fs.appendFile('./logs/requests.json', data+'\n', function error() {
 			if (error) {
 				console.log(data);
 				return;
