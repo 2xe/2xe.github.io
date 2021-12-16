@@ -17,23 +17,26 @@ var server = http.createServer(function(request, response){
 	let body = [];
 	
 	request.on('error', function(err) {
-
-    	console.error(err);
-
-	}).on('data', function(chunk) {
-
-	    body.push(chunk);
-
-	}).on('end', function() {
+		console.error(err);
+	});
+	request.on('data', function(chunk){
+		body.push(chunk);
+	});
+	
+	request.on('end', function() {
 
 		body = Buffer.concat(body).toString();
+	    
 	    // At this point, we have the headers, method, url and body, and can now
 	    // do whatever we need to in order to respond to this request.
+	    
 	    log.on('logServerRequest', function(args){
-			console.log(args);
+	    	// logging to json file
 		});
 
-		log.logServerRequest(headers);
+		log.logServerRequest(headers); // log headers to file
+
+		console.log('test'+body);
 
 		// write out
 		response.writeHead(200, {'content-type': 'text/html'});

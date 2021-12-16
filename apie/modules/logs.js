@@ -8,9 +8,9 @@ class Logs extends EventEmitter {
 		let data = JSON.stringify(request);
 	
 		// save to file
-		fs.appendFile('./logs/requests.json', data+'\n', function error() {
+		fs.appendFile('./logs/requests.json', data+'\n', function(error) {
 			if (error) {
-				console.log(data);
+				console.log(error);
 				return;
 			}
 		});

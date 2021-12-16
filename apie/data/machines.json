@@ -1,0 +1,41 @@
+{
+	"machines": [
+				{
+					"id": 1,
+					"brand": "Rocket",
+					"model": "EPICA",
+					"pressure_profile_system": "Yes",
+					"pid_pressure_control": "Yes",
+					"shot_timer": "Yes",
+					"boilers": [
+								{"id": 1, "outlet": "steamer", "capacity": "1.9"}, // capacity L
+								{"id": 2, "outlet": "brewer", "capacity": "3.6"} // capacity L
+							],
+					"total_boiler_capacity": "5.5",
+					"water_feed": "Hard plumbing", // Reservoir / Hard plumbing
+					"wattage": "220-240V; 50/60Hz; 1600W",
+					"width": "420", //mm
+					"depth": "505", //mm
+					"height": "645", //mm
+					"weight": "42.4", // kg
+				},
+				{
+					"id": 2,
+					"brand": "Rocket",
+					"model": "Appartamento",
+					"pressure_profile_system": "No",
+					"pid_pressure_control": "Yes",
+					"shot_timer": "Yes",
+					"boilers": [
+								{"id": 1, "outlet": "Head & Steam", "capacity": "1.8"}
+							],
+					"total_boiler_capacity": "1.8", // L
+					"water_feed": "Reservoir", // Reservoir / Hard plumbing
+					"wattage": "220-240V; 50/60Hz; 1350W",
+					"width": "335", //mm
+					"depth": "420", //mm
+					"height": "400", //mm
+					"weight": "23", // kg
+				}
+	]
+}
