@@ -9,17 +9,17 @@
 
 
 	/* MOCHA */
-	--c-mocha-white: 		#FFFFFF;
-	--c-mocha-black: 		#000000;
-	--c-mocha-light-grey: 	#E6E7ED;
-	--c-mocha-grey: 		#BFBFBF;
-	--c-mocha-grey2: 		#E6E7ED;
-	--c-mocha-darkgrey: 	#595552;
-	--c-mocha-sand: 		#D5CEB6;
-	--c-mocha-brown: 		#45320C;
-	--c-mocha-green:  		#83ad4e;
-	--c-mocha-darkgreen:  	#556146;
-	--c-mocha-darkestgreen: #1A221A;
+	--c-mocha-white: 				#FFFFFF;
+	--c-mocha-black: 				#000000;
+	--c-mocha-light-grey: 			#E6E7ED;
+	--c-mocha-grey: 				#A0A3AF;
+	--c-mocha-background-grey: 		#E6E7ED;
+	--c-mocha-darkgrey: 			#595552;
+	--c-mocha-sand: 				#D5CEB6;
+	--c-mocha-brown: 				#45320C;
+	--c-mocha-green:  				#83ad4e;
+	--c-mocha-darkgreen:  			#556146;
+	--c-mocha-darkestgreen: 		#1A221A;
 
 /* FONT SIZES */
 	--f-xxlarge: 		36px;
@@ -43,7 +43,7 @@ body {
 	border-radius: 16px;
 	font-family: var(--f-family-standard);
 	color: var(--c-mocha-brown);
-	background-color: var(--c-mocha-grey2);
+	background-color: var(--c-mocha-background-grey);
 	font-size: var(--f-text);
 }
 
@@ -57,6 +57,68 @@ a:hover {
 	cursor: pointer;
 	text-decoration: underline;
 }
+form {
+	
+}
+
+input {
+	background-color: var(--c-mocha-white);
+	color: var(--c-mocha-darkgreen);
+	font-size: var(--f-text);
+
+	margin-right: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	font-family: var(--f-family-input);
+	transition: 0.5s;
+}
+
+input[type=number]:focus {
+	
+}
+
+input[type=text] {
+} 
+
+input[type=text]:hover,
+input[type=text]:active,
+input[type=text]:focus {
+	background-color: 	var(--c-mocha-darkgreen);
+	color: var(--c-mocha-white);
+	transition: 2s;
+	border: none;
+} 
+
+input[type=button], 
+input[type=submit], 
+input[type=reset] {
+	background-color: 	var(--c-mocha-white);
+	color: 				var(--c-mocha-darkgreen);
+	font-weight: 		bold;
+	cursor: 			pointer;
+	padding-left: 7px;
+	padding-right: 7px;
+	transition: 0.5s;
+}
+input[type=button]:hover, 
+input[type=submit]:hover, 
+input[type=reset]:hover {
+	background-color: 	var(--c-mocha-darkgreen);
+	color: 				var(--c-white);
+	transition: 0.5s;
+}
+
+.search-recipes {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.search-recipes form {
+	display: flex;
+}
+
 #top {
 	display: flex;
 	flex-direction: row;

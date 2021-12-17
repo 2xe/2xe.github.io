@@ -2,16 +2,16 @@
 <html>
 
 <head>
-	<script type="text/javascript" src="js/temperature.js"></script>
-	<script type="text/javascript" src="js/ratio.js"></script>
-	<script type="text/javascript" src="js/include-html.js"></script>
+	<script type="text/javascript" src="../js/temperature.js"></script>
+	<script type="text/javascript" src="../js/ratio.js"></script>
+	<script type="text/javascript" src="../js/include-html.js"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@500&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="css/style.css?v=2">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css?v=2">
+	<link rel="stylesheet" type="text/css" href="../css/style.css?v=2">
+	<link rel="stylesheet" type="text/css" href="../css/responsive.css?v=2">
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,8 @@
 		<div class="brand-name">Coffee Club</div>
 	</div>
 	<div id="menu">
-		<div class="item"><a href="./brew/index.html">Brew</a></div>
-		<div class="item active"><a href="">Recipes</a></div>
+		<div class="item active"><a href="">Brew</a></div>
+		<div class="item"><a href="">Recipes</a></div>
 		<div class="item"><a href="">Beans</a></div>
 		<div class="item"><a href="./setup/index.html">Inventory</a></div>
 	</div>
@@ -76,7 +76,52 @@
 
 <div class="extraction">
 
-	<div class="brew-data">
+	<form>
+	<div class="brewmode-step-1">
+		<div class="headline">Select recipe</div>
+		<select>
+			<option>All beans</option>
+			<optgroup label="Arcaffe">
+				<option>Mokacrema</option>
+			</optgroup>
+		</select>
+	</div>
+	<div class="brewmode-step-1">
+		<div class="headline">Select bean</div>
+		<select>
+			<option>All beans</option>
+			<optgroup label="Arcaffe">
+				<option>Mokacrema</option>
+			</optgroup>
+		</select>
+	</div>
+	<div class="brewmode-step-1">
+		<div class="headline">Select coffee</div>
+		<select>
+			<option>All ratios</option>
+			<optgroup label="Ristretto">
+				<option>1:1</option>
+				<option>1:15</option>
+			</optgroup>
+			<optgroup label="Espresso">
+				<option>1:2</option>
+				<option>1:3</option>
+			</optgroup>
+			<optgroup label="Lungo">
+				<option>1:31</option>
+				<option>1:4</option>
+				<option>1:5</option>
+			</optgroup>
+			<optgroup label="Drip">
+				<option>1:16</option>
+				<option>1:18</option>
+				<option>1:20</option>
+			</optgroup>
+		</select>
+	</div>
+	</form>
+
+	<!--<div class="brew-data">
 		<div class="headline">Arcaffe ext v1.3</div>
 		<div class="barista"><a>@John Doe</a></div>
 		<div class="description">
@@ -130,10 +175,10 @@
 		</div>
 		<div class="coffee-bean variety">
 				<div class="data">Variety:</div>  Arabica 100%
-		</div> <!-- Arabica 0-100% / Robusta 0-100% -->
+		</div>  Arabica 0-100% / Robusta 0-100%
 		<div class="coffee-bean roast">
 				<div class="data">Roast:</div>  Medium
-		</div> <!-- Light, medium, dark, blend -->
+		</div> Light, medium, dark, blend 
 		<div class="coffee-bean origin">
 				<div class="data">Origin:</div>  Brasilien, El Salvador, Etiopien, Guatemala
 		</div>
@@ -149,7 +194,7 @@
 		<div class="coffee-machine filter">
 				<div class="data">Tamper:</div> Rocket tamper
 		</div>
-	</div>
+	</div>-->
 
 	
 	<!--
