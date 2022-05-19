@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="../js/temperature.js"></script>
+	<script type="text/javascript" src="../js/ratio.js"></script>
+	<script type="text/javascript" src="../js/include-html.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="../css/style.css?v=2">
+	<link rel="stylesheet" type="text/css" href="../css/responsive.css?v=2">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Coffee is hot</title>
+</head>
+<body>
+
+<!-- branding and menu -->
+<div id="top">
+	<div class="brand">
+		<div class="brand-logo"></div>
+		<div class="brand-name">Coffee Club</div>
+	</div>
+	<div id="menu">
+		<div class="item active"><a href="">Brew</a></div>
+		<div class="item"><a href="">Recipes</a></div>
+		<div class="item"><a href="">Beans</a></div>
+		<div class="item"><a href="./setup/index.html">Inventory</a></div>
+	</div>
+</div>
+
+<div id="brewmode">
+
+	<div class="brewmode-step-1">
+		<div class="headline">Select recipe</div>
+		<select>
+			<option>All recipes</option>
+			<optgroup label="Arcaffe">
+				<option>Mokacrema</option>
+			</optgroup>
+		</select>
+	</div>
+	<div class="brewmode-step-1">
+		<div class="headline">Find by bean</div>
+		<select>
+			<option>All beans</option>
+			<optgroup label="Arcaffe">
+				<option>Mokacrema</option>
+			</optgroup>
+		</select>
+	</div>
+	<div class="brewmode-step-1">
+		<div class="headline">Find by ratio</div>
+		<select>
+			<option>All ratios</option>
+			<optgroup label="Ristretto">
+				<option>1:1</option>
+				<option>1:15</option>
+			</optgroup>
+			<optgroup label="Espresso">
+				<option>1:2</option>
+				<option>1:3</option>
+			</optgroup>
+			<optgroup label="Lungo">
+				<option>1:31</option>
+				<option>1:4</option>
+				<option>1:5</option>
+			</optgroup>
+			<optgroup label="V60">
+				<option>1:16</option>
+				<option>1:18</option>
+				<option>1:20</option>
+			</optgroup>
+			<optgroup label="Drip">
+				<option>1:16</option>
+				<option>1:18</option>
+				<option>1:20</option>
+			</optgroup>
+		</select>
+	</div>
+
+	<!--<div class="brew-data">
+		<div class="headline">Arcaffe ext v1.3</div>
+		<div class="barista"><a>@John Doe</a></div>
+		<div class="description">
+			By far my favorite espresso. For this method I prefer using flow control with a starting pressure around 1 bar and ending around 2 bar.
+		</div>
+	</div>
+
+	<div class="brew-data">
+		
+	</div>
+	
+	<div class="brew-data">
+		<div class="coffee-brew weight">
+				<div class="data">Weight: </div> <span id="espresso-start-weight">16</span>g
+		</div>
+		<div class="coffee-brew ratio">
+				<div class="data">Ratio:</div>  <span id="espresso-ratio">1:2</span>
+		</div>
+		<div class="coffee-brew cup">
+				<div class="data">Cup:</div>  <span id="espresso-end-weight">32</span>g
+		</div>
+		<div class="coffee-brew time">
+				<div class="data">Time:</div>  26s
+		</div>
+		<div class="coffee-brew temperature">
+				<div class="data">Temperature:</div>  93°C <i><span id="ctof"></span>°F / &nbsp;<span id="ctok"></span>K</i>
+		</div>
+	</div>
+
+	<div class="brew-data">
+		<div class="coffee-grinder setting">
+				<div class="data">Grind size:</div> 14
+		</div>
+		<div class="coffee-grinder time">
+				<div class="data">Grind time:</div> 16s
+		</div>
+		<div class="coffee-grinder model">
+				<div class="data">Grinder:</div><a href="" title="">Rocket Super Fausto</a>
+		</div>
+		<div class="coffee-grinder grinder">
+				<div class="data">Type:</div> 75mm Flat burrs
+		</div>
+	</div>
+
+	<div class="brew-data">
+		<div class="coffee-bean name">
+				<div class="data">Bean:</div>  Arcaffe Mokacrema
+		</div>
+		<div class="coffee-bean type">
+				<div class="data">Type:</div>  Whole beans
+		</div>
+		<div class="coffee-bean variety">
+				<div class="data">Variety:</div>  Arabica 100%
+		</div>  Arabica 0-100% / Robusta 0-100%
+		<div class="coffee-bean roast">
+				<div class="data">Roast:</div>  Medium
+		</div> Light, medium, dark, blend 
+		<div class="coffee-bean origin">
+				<div class="data">Origin:</div>  Brasilien, El Salvador, Etiopien, Guatemala
+		</div>
+	</div>
+
+	<div class="brew-data">
+		<div class="coffee-machine model">
+				<div class="data">Machine:</div><a href="">Rocket Appartamento</a>
+		</div>
+		<div class="coffee-machine filter">
+				<div class="data">Filter:</div> Bottomless portafilter, 58mm
+		</div>
+		<div class="coffee-machine filter">
+				<div class="data">Tamper:</div> Rocket tamper
+		</div>
+	</div>-->
+
+	
+	<!--
+		BREW RATIO
+		
+		Ratio is coffee in to water out
+		Say you use 16g coffee and the espressos totals weight is 36g it's a 1:2 ratio and normally classyfied as an espresso normale
+
+		1:1 -> 1:2 = Ristretto
+		1:2 -> 1:3 = Espresso
+		1:3 -> 1:4 = Lungo
+
+		~ 1:15 Drip coffee
+	-->
+	<!--
+		BREW TIME
+
+		Grind size decides how long it takes to get the desired ratio / weight
+		
+		As water hits ground coffee, it begins to pull out 1.salts, 2.acids, 3.sugars, and 4.bitters—in that order
+		
+		Normal target is 25 - 35 seconds
+
+		A longer brew time will result in more body and complexity 
+		A shorter brew time will result is less body and less complexity in the cup
+
+	-->
+	
+	
+	<!--
+		BREW TEMPERATURE
+		
+		Brew Temperature should be used mainly as a way to adjust the flavor of espresso in a machine that keeps temperatures extremely consistent.
+
+		Brew temperature of 200 °F / 93 °C will give you good results.
+
+		Brew Temperature as a way to adjust to different roasts and brew ratios.
+
+		Normally, light roasts and larger brew ratios will require higher brew temperatures.
+
+		Darker roasts and smaller brew ratios will require lower brew temperatures.
+
+	-->
+
+</div>
+<div id="footer">
+	<div class="brand">
+		<div class="brand-logo"></div>
+		<!--<div class="brand-name">Coffee Club</div>-->
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) { 
+
+		console.log("DOMContentLoaded");
+
+		// Fill in the blanks if enough data is provided
+		let espressoStartWeight = document.getElementById("espresso-start-weight");
+		let espressoRatio = document.getElementById("espresso-start-weight");
+		let espressoEndWeight = document.getElementById("espresso-start-weight");
+		
+		
+		if (espressoStartWeight && espressoEndWeight) {		// calculate Espresso Ratio 
+			espressoRatio = calculateEspressoRatio(espressoStartWeight, espressoEndWeight);
+		}
+		else if (espressoRatio && espressoStartWeight) {	// calculate Espresso End Weight
+			espressoEndWeight = calculateEspressoEndWeight(espressoRatio, espressoStartWeight);
+		}
+		else if (espressoRatio && espressoEndWeight) {		// calculate Espresso Start Weight
+			espressoStartWeight = calculateEspressoStartWeight(espressoRatio, espressoEndWeight);
+		}
+
+		let fahrenheit = celsiusToFahrenheit(93);
+		let kelvin = celsiusToKelvin(93);
+
+		document.getElementById("ctof").innerHTML = fahrenheit;
+		document.getElementById("ctok").innerHTML =kelvin;
+
+		includeHTML();
+	});
+</script>
+</body>
+</html>

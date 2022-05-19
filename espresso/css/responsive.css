@@ -1,0 +1,20 @@
+/* Responsive */
+@media (max-width: 800px) {
+	
+	#top {
+    	flex-direction: column;
+    	justify-content: center;
+	}
+	#top .brand {
+		justify-content: center;
+	}
+	#menu {
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+	}
+	#menu .item {
+		width: auto;
+		text-align: center;
+	}
+}
