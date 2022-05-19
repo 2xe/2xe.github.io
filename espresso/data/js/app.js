@@ -1,28 +1,3 @@
-/*
-DATA espresso
-
-Weight:16g
-Ratio:1:2
-Cup:32g
-Time:26s
-Temperature:93°C 199.4°F /  366.15K
-
-Grind size:14
-Grind time:16s
-Grinder:Rocket Super Fausto
-Type:75mm Flat burrs
-
-Bean:Arcaffe Mokacrema
-Type:Whole beans
-Variety:Arabica 100%
-Roast:Medium
-Origin:Brasilien, El Salvador, Etiopien, Guatemala
-
-Machine:Rocket Appartamento
-Filter:Bottomless portafilter, 58mm
-Tamper:Rocket tamper
-*/
-
 // native modules
 
 // path 
